@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Include the CSS from above here */
+    </style>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <header>
+        <div class="container-fluid">
+            <div class="row border">
+                <div class="col-12">
+                    <h1 class="text-center text-warning">CrypTicker</h1>
+                </div>
+                <div class="row border-top slider-container">
+                    <div class="slider-inner">
+                        <!-- Check if assets has data -->
+                        <% if (assets && assets.length> 0) { %>
+                            <!-- Loop through assets to display data -->
+                            <% assets.forEach(asset=> { %>
+                                <div class="fixed-width-col">
+                                    <a href="#">
+                                        <% if (asset.iconUrl) { %>
+                                            <img src="<%= asset.iconUrl %>" alt="<%= asset.name %> icon" width="20"
+                                                height="20">
+                                            <% } %>
+                                                <small>
+                                                    $ <%= asset.name %>
+                                                </small>
+                                                <span class="mx-1">
+                                                    <small>
+                                                        ▲
+                                                    </small>
+                                                </span>
+                                                <span class="">
+                                                    <small>
+                                                        $ <%= asset.price %>
+                                                    </small>
+                                                </span>
+
+                                    </a>
+                                </div>
+                                <% }); %>
+                                    <% } else { %>
+                                        <p>No data available</p>
+                                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+    </main>
+
+    <footer>
+    </footer>
+</body>
+
+</html>

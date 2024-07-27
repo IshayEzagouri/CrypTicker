@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "axios": "^1.7.2",
+    "axios-rate-limit": "^1.4.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "nodemon": "^3.1.4",
+    "p-limit": "^6.1.0"
+  },
+  "type": "module",
+  "name": "crypto-ticker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,0 +1,47 @@
+/* Container to handle the horizontal overflow */
+.slider-container {
+    overflow: hidden; /* Hide overflow to ensure no scrollbars */
+    white-space: nowrap; /* Prevent wrapping of columns */
+    width: 100%; /* Full width of the container */
+    position: relative; /* Ensure proper positioning */
+    padding-right: 217px; /* Ensure content isn't cut off */
+}
+
+/* Inner container to handle the animation */
+.slider-inner {
+    display: flex; /* Use flexbox for horizontal alignment */
+
+
+    animation: slide 28s linear infinite; /* Adjust animation timing */
+    will-change: transform; /* Enable hardware acceleration */
+}
+
+/* Fixed width for each column */
+.fixed-width-col {
+    min-width: 216px; /* Fixed width for column */
+}
+
+/* Animation to slide columns */
+@keyframes slide {
+    from {
+        transform: translateX(0); /* Start at the initial position */
+    }
+    to {
+        transform: translateX(-100%); /* Move left */
+    }
+}
+
+/* Style for links */
+a {
+    text-decoration: none;
+    color: #262626;
+    display: block; /* Make the link block level for easier clicking */
+    height: 100%; /* Full height of the column */
+    padding: 10px; /* Add some padding */
+    box-sizing: border-box; /* Include padding in element's height */
+}
+
+/* Optional: Hover effect for links */
+.fixed-width-col a:hover {
+    background-color: #E9E9E9;
+}
