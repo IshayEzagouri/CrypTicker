@@ -59,6 +59,66 @@
     </header>
 
     <main>
+
+        <div class="container mt-5">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">Currency</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Volume Monthly</th>
+                            <th scope="col">Volume Weekly</th>
+                            <th scope="col">Total Supply</th>
+                            <th scope="col">Max Supply</th>
+                        </tr>
+                    <tbody>
+                        <% if (assets && assets.length> 0) { %>
+                            <!-- Loop through assets to display data -->
+                            <% assets.forEach(asset=> { %>
+                                <tr>
+                                    <td>
+                                        <% if (asset.iconUrl) { %>
+                                            <img src="<%= asset.iconUrl %>" alt="<%= asset.name %> icon" width="20"
+                                                height="20">
+                                            <% } %>
+                                                <small>$ <%= asset.name %></small>
+                                    </td>
+                                    <td>
+                                        <small>$ <%= asset.price %></small>
+                                    </td>
+                                    <td>
+                                        <small>$ <%= asset.volumeM %></small>
+                                    </td>
+                                    <td>
+                                        <small>$ <%= asset.volumeD %></small>
+                                    </td>
+                                    <td>
+                                        <small>
+                                            <%= asset.totalSupply %>
+                                        </small>
+                                    </td>
+                                    <td>
+                                        <small>
+                                            <%= asset.maxSupply %>
+                                        </small>
+                                    </td>
+                                </tr>
+                                <% }); %>
+                                    <% } else { %>
+                                        <!-- If no assets are available -->
+                                        <tr>
+                                            <td colspan="6" class="text-center">No assets available</td>
+                                        </tr>
+                                        <% } %>
+                    </tbody>
+
+                    </thead>
+                </table>
+            </div>
+        </div>
+
+        </div>
     </main>
 
     <footer>

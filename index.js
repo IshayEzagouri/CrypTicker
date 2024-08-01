@@ -26,9 +26,8 @@ app.set("view engine", "ejs"); // Ensure EJS is set as the view engine
 
 app.get("/", async (req, res) => {
   try {
-    const minVolume = 36000000000;
-    delete req.session.filteredAssets;
-    delete req.session.assetIcons;
+    const minVolume = 300000000;
+
     // Check if the assets are already cached
     if (req.session.filteredAssets && req.session.assetIcons) {
       console.log("Returning cached assets");

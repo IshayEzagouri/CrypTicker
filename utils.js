@@ -1,8 +1,10 @@
 import axios from "axios";
+import dotenv from "dotenv";
 
+dotenv.config();
 // Base URL for API requests
 const baseUrl = "https://rest.coinapi.io/v1";
-const apiKey = "F0279611-DDE2-423D-B412-AA4F7C9EAA91";
+const apiKey = process.env.COINAPI_KEY;
 
 // Fetch all assets
 export const fetchAllAssets = async () => {
@@ -46,6 +48,10 @@ export const constructEndpoints = (assets) => {
   return assets.map((asset) => ({
     name: asset.name,
     price: asset.price_usd ? asset.price_usd.toFixed(2) : "N/A",
+    volumeD: asset.volume_1day_usd,
+    volumeM: asset.volume_1mth_usd,
+    totalSupply: asset.supply_total || "N/A",
+    maxSupply: asset.supply_max || "N/A",
     iconUrl: asset.iconUrl,
   }));
 };
